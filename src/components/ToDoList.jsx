@@ -4,10 +4,11 @@ import { Component } from "react";
 export default class ToDoList extends Component {
   render() {
     const { tasks, deleteMethod, editMethod } = this.props;
+    const reversedTasks = [...tasks].reverse();
 
     return (
       <div className="items">
-        {tasks.reverse().map((item, index, array) => {
+        {reversedTasks.map((item, index, array) => {
           const reversedIndex = array.length - 1 - index;
 
           return (
